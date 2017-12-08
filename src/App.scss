@@ -1,0 +1,264 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@font-face {
+  font-family: c64;
+  src: url("./Commodore64.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: gameOver;
+  src: url("./Game_Over.otf") format('opentype');
+}
+
+.boxText {
+  color: #d85c6f;
+  font-family: c64;
+}
+
+#welcome{
+  font-family: gameOver;
+  font-size: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#command-form{
+  position: absolute;
+  display: inline-flex;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  color: #d85c6f;
+  font-size:24px;
+  font-family: c64;
+}
+
+input[type="text"] {
+    font-size:24px;
+    font-family: c64;
+    background: transparent;
+    border: none;
+    color: #d85c6f;
+}
+
+
+
+
+.body {
+  height: 100%;
+  width: 100%;
+  background-color: #08E7B9;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.centerBox {
+  /*width: 90%;*/
+  width: 715px;
+  height: 50%;
+  background-color: #16123A;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  display: flex;
+  justify-content: space-between;
+}
+
+#textHolder {
+  font-size: 40px;
+}
+
+.txt {
+  position: absolute;
+  padding: 0.5em;
+}
+
+.question {
+  position: absolute;
+  padding: 0.5em;
+}
+
+#loading{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  float: right;
+  align-self: flex-end;
+  opacity: 0;
+}
+
+.char {
+  visibility: hidden;
+}
+
+.tint:before {
+  content: "";
+  display: block;
+  /*position: absolute;*/
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #16123A;
+  transition: all .3s linear;
+}
+
+#void-name{
+  display: none;
+  text-align: center;
+  margin-top: 1em;
+}
+
+#command-input{
+  width: 100%;
+  padding: 0.5em;
+}
+
+
+/* REGULAR SCANLINES SETTINGS */
+
+    // width of 1 scanline (min.: 1px)
+    $scan-width: 2px;
+
+    // emulates a damage-your-eyes bad pre-2000 CRT screen ♥ (true, false)
+    $scan-crt: true;
+
+    // frames-per-second (should be > 1), only applies if $scan-crt: true;
+    $scan-fps: 60;
+
+    // scanline-color (rgba)
+    $scan-color: rgba(#000, .3);
+
+    // set z-index on 8, like in ♥ 8-bits ♥, or…
+    // set z-index on 2147483648 or more to enable scanlines on Chrome fullscreen (doesn't work in Firefox or IE);
+    $scan-z-index: 2147483648;
+
+/* MOVING SCANLINE SETTINGS */
+
+    // moving scanline (true, false)
+    $scan-moving-line: true;
+
+    // opacity of the moving scanline
+    $scan-opacity: .75;
+
+/* MIXINS */
+
+    // apply CRT animation: @include scan-crt($scan-crt);
+    @mixin scan-crt($scan-crt) {
+        @if $scan-crt == true {
+            animation: scanlines 1s steps($scan-fps) infinite;
+        }
+        @else { animation: none; }
+    }
+
+    // apply CRT animation: @include scan-crt($scan-crt);
+    @mixin scan-moving($scan-moving-line) {
+        @if $scan-moving-line == true {
+            animation: scanline 6s linear infinite;
+        }
+        @else { animation: none; }
+    }
+
+/* CSS .scanlines CLASS */
+
+    .scanlines {
+        position: relative;
+        overflow: hidden; // only to animate the unique scanline
+        height: 100%;
+        width: 100%;
+        z-index: 1000;
+        &:before,
+        &:after {
+            display: block;
+            pointer-events: none;
+            content: '';
+            position: absolute;
+        }
+
+        // unique scanline travelling on the screen
+        &:before {
+            // position: absolute;
+            // bottom: 100%;
+            width: 100%;
+            height: $scan-width * 1;
+            z-index: $scan-z-index + 1;
+            background: $scan-color;
+            opacity: $scan-opacity;
+            // animation: scanline 6s linear infinite;
+            @include scan-moving($scan-moving-line);
+        }
+
+        // the scanlines, so!
+        &:after {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: $scan-z-index;
+            background: linear-gradient(
+                to bottom,
+                transparent 50%,
+                $scan-color 51%
+            );
+            background-size: 100% $scan-width*2;
+            @include scan-crt($scan-crt);
+        }
+    }
+
+/* ANIMATE UNIQUE SCANLINE */
+    @keyframes scanline {
+        0% {
+            transform: translate3d(0,200000%,0);
+            // bottom: 0%; // to have a continuous scanline move, use this line (here in 0% step) instead of transform and write, in &:before, { position: absolute; bottom: 100%; }
+        }
+    }
+
+    @keyframes scanlines {
+        0% {
+            background-position: 0 50%;
+            // bottom: 0%; // to have a continuous scanline move, use this line (here in 0% step) instead of transform and write, in &:before, { position: absolute; bottom: 100%; }
+        }
+    }
+
+
+.jpg {
+    background: url('http://images.eurogamer.net/articles//a/6/4/8/8/1/7/PC_003.jpg.jpg.jpg') no-repeat;
+    background-size: cover;
+}
