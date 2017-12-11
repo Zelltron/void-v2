@@ -23,12 +23,17 @@ export default class CommandForm extends Component {
       value: ''
     };
 
+    this.handleChangeYes = this.handleChangeYes.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     this.setState({value: event.target.value});
+  }
+
+  handleChangeYes(event) {
+    this.setState({value: 'Yes'});
   }
 
   handleSubmit(event) {
@@ -48,7 +53,7 @@ export default class CommandForm extends Component {
     return (
       <form id="command-form" onSubmit={this.handleSubmit}>
         <p style={styles.pStyle}>{">"}</p>
-        <input autoComplete="off" id="command-input" type="text" value={this.state.value} onChange={this.handleChange} maxLength="150"/>
+        <input autoComplete="off" id="command-input" type="text" value={this.state.value} onChange={this.handleChangeYes} maxLength="3"/>
         <input type="submit" id="enter-submit" value="Submit" />
       </form>
     );
