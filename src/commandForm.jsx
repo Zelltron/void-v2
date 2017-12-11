@@ -32,10 +32,9 @@ export default class CommandForm extends Component {
   }
 
   handleSubmit(event) {
-    // alert("Cool name " + this.state.value);
     $("#enter-void").hide();
     $("#command-form").hide();
-    $("#loading").attr("src", "./vortex.gif");
+    $("#loading").attr("src", process.env.PUBLIC_URL + "/vortex.gif");
     setTimeout(function(){
       $("#loading").remove();
       $("#void-name").show();
