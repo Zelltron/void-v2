@@ -49,7 +49,7 @@ export default class CommandForm extends Component {
       <form id="command-form" onSubmit={this.handleSubmit}>
         <p style={styles.pStyle}>{">"}</p>
         <input autoComplete="off" id="command-input" type="text" value={this.state.value} onChange={this.handleChange} maxLength="150"/>
-        <input type="submit" value="Submit" />
+        <input type="submit" id="enter-submit" value="Submit" />
       </form>
     );
   }
