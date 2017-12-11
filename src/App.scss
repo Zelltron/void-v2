@@ -44,7 +44,10 @@
 
 #welcome{
   font-family: gameOver;
-  font-size: 60px;
+  font-size: 2.5em;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -54,15 +57,15 @@
   position: absolute;
   display: inline-flex;
   bottom: 0;
-  width: 100%;
+  width: 98%;
   opacity: 0;
   color: #d85c6f;
-  font-size:24px;
   font-family: c64;
+  padding-left: 1em;
 }
 
 input[type="text"] {
-    font-size:24px;
+    font-size:1.5em;
     font-family: c64;
     background: transparent;
     border: none;
@@ -102,17 +105,19 @@ button:focus {
 }
 
 #textHolder {
-  font-size: 40px;
+  font-size: 2em;
 }
 
 .txt {
   position: absolute;
   padding: 0.5em;
+  padding-top: 0;
 }
 
 .question {
   position: absolute;
   padding: 0.5em;
+  padding-top: 0;
 }
 
 #loading{
