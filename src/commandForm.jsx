@@ -44,6 +44,8 @@ export default class CommandForm extends Component {
     $("#loading").attr("src", process.env.PUBLIC_URL + "/vortex.gif");
     setTimeout(function(){
       $("#loading").remove();
+      $(".space").show();
+      $(".space-container").css('display', 'flex');
       $("#void-name").show();
     }, 4400)
     this.props.timeline.to($("#loading"), 0.2, {delay: 0.1, opacity: 1});
@@ -53,7 +55,7 @@ export default class CommandForm extends Component {
 
   render() {
     const isEnabled = this.state.value.length > 0;
-    
+
     return (
       <form id="command-form" onSubmit={this.handleSubmit}>
         <p style={styles.pStyle}>{">"}</p>

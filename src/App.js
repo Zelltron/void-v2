@@ -59,6 +59,21 @@ export default class App extends Component {
                 <h3 id="void-name">{"Very Odd Independent Design"}</h3>
               </div>
               <img alt="portal" id="loading"/>
+              <div class="space"></div>
+              <div class="space-container">
+              <div class="space-wrapper">
+                 <div class="blackhole">
+                   <div class="debris"></div>
+                   <div class="debris"></div>
+                   <div class="debris"></div>
+                   <div class="debris"></div>
+                   <div class="debris"></div>
+                   <div class="debris"></div>
+                   <div class="debris"></div>
+                   <div class="debris"></div>
+                </div>
+              </div>
+            </div>
               <CommandForm {...this.props} timeline={tl}/>
             </div>
           </div>
