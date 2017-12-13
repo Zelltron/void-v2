@@ -75,6 +75,9 @@ export default class App extends Component {
               </div>
             </div>
               <CommandForm {...this.props} timeline={tl}/>
+              <img className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"} />
+              <img className="mainscreen linked" src={process.env.PUBLIC_URL + "/linked.png"} />
+              <img className="mainscreen octo" src={process.env.PUBLIC_URL + "/octo.svg"} />
             </div>
           </div>
         </div>
