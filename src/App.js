@@ -48,6 +48,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className="body">
+          <img src={process.env.PUBLIC_URL + "/frame.png"} id="frame"/>
           <div className="centerBox">
             <div className="scanlines">
               <div className="boxText" id="textHolder">
