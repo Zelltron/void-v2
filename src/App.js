@@ -56,7 +56,7 @@ export default class App extends Component {
                 <h3 className="txt">{"What's up?"}</h3>
                 <h3 className="txt">{"≧◡≦"}</h3>
                 <h3 id="welcome" className="txt">{"Welcome!"}</h3>
-                <h3 className="question" id="enter-void">{"Enter the V.O.I.D.?"}</h3>
+                <h3 className="question" id="enter-void">{"Enter V.O.I.D.?"}</h3>
                 <h3 id="void-name">{"Very Odd Independent Design"}</h3>
               </div>
               <img alt="portal" id="loading"/>
