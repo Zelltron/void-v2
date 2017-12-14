@@ -76,9 +76,11 @@ export default class App extends Component {
               </div>
             </div>
               <CommandForm {...this.props} timeline={tl}/>
-              <img className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"} />
-              <a target="_blank" href="https://www.linkedin.com/in/ryanzell"><img className="mainscreen linked" src={process.env.PUBLIC_URL + "/linked.png"} /></a>
-              <a target="_blank" href="https://www.github.com/zelltron"><img className="mainscreen octo" src={process.env.PUBLIC_URL + "/octo.svg"} /></a>
+              <div id="images">
+                <img className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"} />
+                <a target="_blank" href="https://www.linkedin.com/in/ryanzell"><img className="mainscreen linked" src={process.env.PUBLIC_URL + "/linked.png"} /></a>
+                <a target="_blank" href="https://www.github.com/zelltron"><img className="mainscreen octo" src={process.env.PUBLIC_URL + "/octo.svg"} /></a>
+              </div>
             </div>
           </div>
         </div>
