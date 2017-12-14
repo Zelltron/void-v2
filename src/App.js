@@ -3,7 +3,7 @@ import './App.css';
 import React, {Component} from 'react';
 import $ from 'jquery';
 
-import { TimelineMax, Power1 } from 'gsap';
+import {TimelineMax, Power1} from 'gsap';
 import SplitText from './gsap/SplitText.min.js';
 
 import CommandForm from './commandForm';
@@ -62,24 +62,34 @@ export default class App extends Component {
               <img alt="portal" id="loading"/>
               <div class="space"></div>
               <div class="space-container">
-              <div class="space-wrapper">
-                 <div class="blackhole">
-                   <div class="debris"></div>
-                   <div class="debris"></div>
-                   <div class="debris"></div>
-                   <div class="debris"></div>
-                   <div class="debris"></div>
-                   <div class="debris"></div>
-                   <div class="debris"></div>
-                   <div class="debris"></div>
+                <div class="space-wrapper">
+                  <div class="blackhole">
+                    <div class="debris"></div>
+                    <div class="debris"></div>
+                    <div class="debris"></div>
+                    <div class="debris"></div>
+                    <div class="debris"></div>
+                    <div class="debris"></div>
+                    <div class="debris"></div>
+                    <div class="debris"></div>
+                  </div>
                 </div>
               </div>
-            </div>
               <CommandForm {...this.props} timeline={tl}/>
               <div id="images">
-                <img className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"} />
-                <a target="_blank" href="https://www.linkedin.com/in/ryanzell"><img className="mainscreen linked" src={process.env.PUBLIC_URL + "/linked.png"} /></a>
-                <a target="_blank" href="https://www.github.com/zelltron"><img className="mainscreen octo" src={process.env.PUBLIC_URL + "/octo.svg"} /></a>
+                <div className="tv-row">
+                  <div>
+                    <img className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
+                  </div>
+                  <div>
+                    <img className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
+                  </div>
+                  <div>
+                    <img className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
+                  </div>
+                </div>
+                <a target="_blank" href="https://www.linkedin.com/in/ryanzell"><img className="mainscreen linked" src={process.env.PUBLIC_URL + "/linked.png"}/></a>
+                <a target="_blank" href="https://www.github.com/zelltron"><img className="mainscreen octo" src={process.env.PUBLIC_URL + "/octo.svg"}/></a>
               </div>
             </div>
           </div>

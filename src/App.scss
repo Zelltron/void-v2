@@ -79,6 +79,14 @@
   src: url("./Game_Over.otf") format('opentype');
 }
 
+.tv-row{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
 .boxText {
   color: #d85c6f;
   font-family: c64;
@@ -503,7 +511,7 @@ $scan-opacity: 0.75;
 }
 
 .tv {
-  height: 200px;
+  height: 100%;
 }
 
 .octo {
