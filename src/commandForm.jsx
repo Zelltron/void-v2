@@ -12,6 +12,10 @@ const styles = {
     marginLeft: '0.5em !important',
     marginTop: '0.5em !important',
     marginBottom: '0.5em !important'
+  },
+
+  submitStyle: {
+    display: 'none'
   }
 }
 
@@ -58,7 +62,7 @@ export default class CommandForm extends Component {
       <form id="command-form" onSubmit={this.handleSubmit}>
         <p style={styles.pStyle}>{">"}</p>
         <input autoFocus="true" autoComplete="off" id="command-input" type="text" value={this.state.value} onChange={this.handleChangeYes} maxLength="3"/>
-        <input type="submit" id="enter-submit" disabled={!isEnabled} value="Submit" />
+        <input type="submit" id="enter-submit" disabled={!isEnabled} value="Submit" style={styles.submitStyle} />
       </form>
     );
   }
