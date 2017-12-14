@@ -43,6 +43,8 @@ export default class CommandForm extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
+    $( "#command-input" ).blur();
     $("#enter-void, #command-form").hide();
     $("#loading").attr("src", process.env.PUBLIC_URL + "/vortex.gif");
     setTimeout(function(){
@@ -52,7 +54,6 @@ export default class CommandForm extends Component {
     }, 4400)
     this.props.timeline.to($("#loading"), 0.2, {delay: 0.1, opacity: 1});
     this.props.timeline.to($(".centerBox"), 0.6, {delay: 0.3, width: '100%', height: '100%'});
-    event.preventDefault();
   }
 
   render() {
