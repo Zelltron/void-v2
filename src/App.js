@@ -48,7 +48,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className="body">
-          <img src={process.env.PUBLIC_URL + "/frame.png"} id="frame"/>
+          <img alt="frame" src={process.env.PUBLIC_URL + "/frame.png"} id="frame"/>
           <div className="centerBox">
             <div className="scanlines">
               <div className="boxText" id="textHolder">
@@ -60,18 +60,18 @@ export default class App extends Component {
                 <h3 id="void-name">{"Very Odd Independent Design"}</h3>
               </div>
               <img alt="portal" id="loading"/>
-              <div class="space"></div>
-              <div class="space-container">
-                <div class="space-wrapper">
-                  <div class="blackhole">
-                    <div class="debris"></div>
-                    <div class="debris"></div>
-                    <div class="debris"></div>
-                    <div class="debris"></div>
-                    <div class="debris"></div>
-                    <div class="debris"></div>
-                    <div class="debris"></div>
-                    <div class="debris"></div>
+              <div className="space"></div>
+              <div className="space-container">
+                <div className="space-wrapper">
+                  <div className="blackhole">
+                    <div className="debris"></div>
+                    <div className="debris"></div>
+                    <div className="debris"></div>
+                    <div className="debris"></div>
+                    <div className="debris"></div>
+                    <div className="debris"></div>
+                    <div className="debris"></div>
+                    <div className="debris"></div>
                   </div>
                 </div>
               </div>
@@ -79,17 +79,17 @@ export default class App extends Component {
               <div id="images">
                 <div className="tv-row">
                   <div>
-                    <img className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
+                    <img alt="tv-1" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
                   </div>
                   <div>
-                    <img className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
+                    <img alt="tv-2" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
                   </div>
                   <div>
-                    <img className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
+                    <img alt="tv-3" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
                   </div>
                 </div>
-                <a target="_blank" href="https://www.linkedin.com/in/ryanzell"><img className="mainscreen linked" src={process.env.PUBLIC_URL + "/linked.png"}/></a>
-                <a target="_blank" href="https://www.github.com/zelltron"><img className="mainscreen octo" src={process.env.PUBLIC_URL + "/octo.svg"}/></a>
+                <a target="_blank" href="https://www.linkedin.com/in/ryanzell"><img alt="linkedin" className="mainscreen linked" src={process.env.PUBLIC_URL + "/linked.png"}/></a>
+                <a target="_blank" href="https://www.github.com/zelltron"><img alt="github" className="mainscreen octo" src={process.env.PUBLIC_URL + "/octo.svg"}/></a>
               </div>
             </div>
           </div>
