@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import {TimelineMax, Power2} from 'gsap';
+import {TimelineMax, Power1} from 'gsap';
 
 let isMobile = 'false';
 
@@ -57,7 +57,7 @@ export default class CommandForm extends Component {
     }, 4400)
     this.props.timeline.to($("#loading"), 0.2, {delay: 0.1, opacity: 1});
     this.props.timeline.to($(".centerBox"), 0.6, {delay: 0.3, width: '100%', height: '100%'});
-    tl2.to( $(".tv") , 1.3, { y: "-=20px", ease: Power2.easeIn } );
+    tl2.to( $(".tv") , 1.3, { y: "-=15px", ease: Power1.easeInOut } );
     tl2.play();
 }
 
