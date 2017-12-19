@@ -91,9 +91,6 @@ export default class App extends Component {
                   <div className="tv-container">
                     <img alt="tv-3" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
                   </div>
-                  <div className="tv-container">
-                    <img alt="tv-4" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
-                  </div>
                 </div>
                 <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/ryanzell"><img alt="linkedin" className="mainscreen linked" src={process.env.PUBLIC_URL + "/linked.png"}/></a>
                 <a rel="noopener noreferrer" target="_blank" href="https://www.github.com/zelltron"><img alt="github" className="mainscreen octo" src={process.env.PUBLIC_URL + "/octo.svg"}/></a>
