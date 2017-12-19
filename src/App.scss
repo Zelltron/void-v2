@@ -79,12 +79,13 @@
   src: url("./Game_Over.otf") format('opentype');
 }
 
-.tv-row{
+.tv-row {
   display: flex;
   width: 100%;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
+  padding-top: 1em;
 }
 
 .boxText {
@@ -115,6 +116,7 @@
   padding-right: 10%;
   padding-bottom: 2.5em;
   font-size: 1.2em;
+  z-index: 2;
 }
 
 input[type="text"] {
@@ -152,7 +154,7 @@ textarea:focus {
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 1;
+  z-index: 1000;
   pointer-events: none;
 }
 
@@ -165,6 +167,7 @@ textarea:focus {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 #textHolder {
@@ -250,33 +253,32 @@ textarea:focus {
   box-shadow: -2px -1px 1px 1px black;
 }
 
-#images {
+#central-body {
   position: absolute;
-  top: 30%;
+  height: 75%;
   width: 100%;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  z-index: 1;
+  padding-bottom: 1em;
+  bottom: 0;
+  overflow: scroll;
 }
 /* REGULAR SCANLINES SETTINGS */
 // width of 1 scanline (min.: 1px)
-$scan-width: 2px;
-// emulates a damage-your-eyes bad pre-2000 CRT screen ♥ (true, false)
-$scan-crt: true;
-// frames-per-second (should be > 1), only applies if $scan-crt: true;
-$scan-fps: 60;
-// scanline-color (rgba)
-$scan-color: rgba(#000, .3);
-// set z-index on 8, like in ♥ 8-bits ♥, or…
+$scan-width: 2px; // emulates a damage-your-eyes bad pre-2000 CRT screen ♥ (true, false)
+$scan-crt: true; // frames-per-second (should be > 1), only applies if $scan-crt: true;
+$scan-fps: 60; // scanline-color (rgba)
+$scan-color: rgba(#000, .3); // set z-index on 8, like in ♥ 8-bits ♥, or…
 // set z-index on 2147483648 or more to enable scanlines on Chrome fullscreen (doesn't work in Firefox or IE);
-$scan-z-index: 2147483648;
-/* MOVING SCANLINE SETTINGS */
+$scan-z-index: 2147483648; /* MOVING SCANLINE SETTINGS */
 // moving scanline (true, false)
-$scan-moving-line: true;
-// opacity of the moving scanline
-$scan-opacity: 0.75;
-/* MIXINS */
+$scan-moving-line: true; // opacity of the moving scanline
+$scan-opacity: 0.75; /* MIXINS */
 // apply CRT animation: @include scan-crt($scan-crt);
 @mixin scan-crt($scan-crt) {
    @if $scan-crt == true{
@@ -296,6 +298,7 @@ $scan-opacity: 0.75;
   }
 }
 /* CSS .scanlines CLASS */
+
 .scanlines {
   position: relative;
   overflow: hidden; // only to animate the unique scanline
@@ -375,7 +378,7 @@ $scan-opacity: 0.75;
   background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 10px), radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 10px), radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 10px), radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 10px);
   background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
   background-position: 0 0, 40px 30px, 130px 270px, 70px 100px;
-  animation: spin 100s linear infinite;
+  animation: spin 120s linear infinite;
   width: 200%;
   height: 400%;
   margin: -100% 0 0 -50%;
@@ -383,6 +386,23 @@ $scan-opacity: 0.75;
   z-index: -1;
   display: none;
 }
+
+// .spaceFront {
+//   position: absolute;
+//   pointer-events: none;
+//   top: 0;
+//   left: 0;
+//   background-image:  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 10px);
+//   background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+//   background-position: 0 0, 20px 15px, 65px 135px, 35px 50px;
+//   animation: spin 60s linear infinite;
+//   width: 200%;
+//   height: 400%;
+//   margin: -100% 0 0 -50%;
+//   opacity: 0.6;
+//   z-index: 1;
+//   display: none;
+// }
 
 .space-container {
   width: 100%;
@@ -435,14 +455,14 @@ $scan-opacity: 0.75;
   margin: -5px 0 0 -5px;
   background: rgba(255,255,255,1);
   border-radius: 50%;
-  animation: drain 5s infinite ease-in;
+  animation: drain 5s infinite ease-out;
 }
 
 .debris + .debris {
   left: 100%;
   animation-delay: 1200ms;
   transform: scale(.7);
-  animation-speed: 7s;
+  animation-duration: 7s;
 }
 
 .debris + .debris + .debris {
@@ -450,7 +470,7 @@ $scan-opacity: 0.75;
   left: 185%;
   animation-delay: 500ms;
   transform: scale(.8);
-  animation-speed: 4s;
+  animation-duration: 4s;
 }
 
 .debris + .debris + .debris + .debris {
@@ -458,7 +478,7 @@ $scan-opacity: 0.75;
   left: 250%;
   animation-delay: 700ms;
   transform: scale(.4);
-  animation-speed: 2s;
+  animation-duration: 2s;
 }
 
 .debris + .debris + .debris + .debris + .debris {
@@ -473,7 +493,7 @@ $scan-opacity: 0.75;
   left: -300%;
   animation-delay: 2000ms;
   transform: scale(.7);
-  animation-speed: 6s;
+  animation-duration: 6s;
 }
 
 .debris + .debris + .debris + .debris + .debris + .debris + .debris {
@@ -510,7 +530,7 @@ $scan-opacity: 0.75;
   display: none;
 }
 
-.tv-container{
+.tv-container {
   position: relative;
 }
 

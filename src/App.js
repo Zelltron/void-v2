@@ -42,6 +42,9 @@ export default class App extends Component {
     typingAnimation($(".txt"), tl);
     questionAnimation($(".question"), tl);
     tl.to($("#command-form"), 0.5, {opacity: 1});
+    $(window).scroll(function(){
+      $(".tv-container").css("opacity", 1 - $(window).scrollTop() / 250);
+    });
   }
 
   render() {
@@ -76,7 +79,7 @@ export default class App extends Component {
                 </div>
               </div>
               <CommandForm {...this.props} timeline={tl}/>
-              <div id="images">
+              <div id="central-body">
                 <div className="tv-row">
                   <div className="tv-container">
                     <img alt="tv-1" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
@@ -87,6 +90,9 @@ export default class App extends Component {
                   </div>
                   <div className="tv-container">
                     <img alt="tv-3" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
+                  </div>
+                  <div className="tv-container">
+                    <img alt="tv-4" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
                   </div>
                 </div>
                 <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/ryanzell"><img alt="linkedin" className="mainscreen linked" src={process.env.PUBLIC_URL + "/linked.png"}/></a>
