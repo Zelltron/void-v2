@@ -37,7 +37,7 @@ function questionAnimation(text, timeline) {
 const tl = new TimelineMax();
 
 /// simple rectangle intersection code, so we can work out what part remains visible
-let intersect = function(r1, r2, bool) {
+function intersect(r1, r2, bool) {
     if ( bool ) {
       return !(r2.left > r1.right ||
                r2.right < r1.left ||
@@ -45,7 +45,7 @@ let intersect = function(r1, r2, bool) {
                r2.bottom < r1.top);
     }
     else {
-        let r3 = {
+        var r3 = {
             left: Math.max(r1.left, r2.left),
             top: Math.max(r1.top, r2.top),
             right: Math.min(r1.right, r2.right),
@@ -57,7 +57,7 @@ let intersect = function(r1, r2, bool) {
     }
 }
 /// simple function to handle full page scroll, when needed.
-let scrollrect = function(r1){
+function scrollrect(r1){
     /// update what we know of the page scroll (this affects ClientRects())
     scrollrect.scrollx = window.pageXOffset || document.documentElement.scrollLeft;
     scrollrect.scrolly = window.pageYOffset || document.documentElement.scrollTop;
@@ -78,7 +78,7 @@ $.extend(
   {
     /// check that an element is actually visible on the screen
     'onscreen': function (el, indx, args) {
-      let $el, ov, r1, r2;
+      var $el, ov, r1;
       r1 = el.getBoundingClientRect();
       el = el.parentNode;
       $el = $(el);
@@ -108,24 +108,22 @@ $.extend(
   }
 );
 
+function update(){
+    let str = '';
+    $('.target').filter(':onscreen').each(function(){
+        str += ($(this).attr('id') + ' is on screen ');
+    });
+    console.log(str);
+};
+
 
 export default class App extends Component {
 
   componentDidMount() {
-    let target = $('.target');
-
-    let update = function(){
-        let str = '';
-        target.filter(':onscreen').each(function(){
-            str += ($(this).attr('id') + ' is on screen ');
-        });
-        console.log(str);
-    };
-
-
     typingAnimation($(".txt"), tl);
     questionAnimation($(".question"), tl);
     tl.to($("#command-form"), 0.5, {opacity: 1});
+    
     $('.scrollable').add(window).scroll(update);
     update();
   }
