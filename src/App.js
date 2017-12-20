@@ -117,7 +117,7 @@ export default class App extends Component {
     let update = function(){
         let str = '';
         target.filter(':onscreen').each(function(){
-            str += ($(this).attr('id') + 'is on screen');
+            str += ($(this).attr('id') + ' is on screen ');
         });
         console.log(str);
     };
@@ -162,8 +162,8 @@ export default class App extends Component {
                 </div>
               </div>
               <CommandForm {...this.props} timeline={tl}/>
-              <div id="central-body" className="scrollable">
-                <div className="tv-row">
+              <div id="central-body" className="scrollable target">
+                <div id="tv-row" className="tv-row target">
                   <div id="tv-con-1" className="tv-container target">
                     <img alt="tv-1" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
                   </div>
