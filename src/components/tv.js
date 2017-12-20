@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
+import reveal from '../scrollReveal/reveal';
 
-const TV = ({imgSrc}) => {
-  return (
-    <div className="tv-container reveal">
-      <img alt="tv-box" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
-      <img alt="dog" className="mainscreen tv-contents" src={process.env.PUBLIC_URL + imgSrc}/>
-    </div>
-  );
+class TV extends Component {
+  render(){
+    return (
+      <div className="tv-container reveal">
+        <img alt="tv-box" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
+        <img alt="dog" className="mainscreen tv-contents" src={"" + this.props.imgSrc}/>
+      </div>
+    );
+  }
 };
 
-export default TV;
+export default reveal(TV);

@@ -41,6 +41,7 @@ export default function reveal(WrappedComponent, configuration) {
       const that = this;
       return (
         <WrappedComponent
+          {...this.props}
           ref={
             function (c) {
               that.bindRef(c);

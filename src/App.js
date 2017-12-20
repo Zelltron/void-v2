@@ -5,7 +5,6 @@ import $ from 'jquery';
 
 import {TimelineMax, Power1} from 'gsap';
 import SplitText from './gsap/SplitText.min.js';
-import ScrollReveal from 'scrollreveal';
 
 import CommandForm from './components/commandForm';
 import TV from './components/tv';
@@ -43,8 +42,6 @@ const tl = new TimelineMax();
 export default class App extends Component {
 
   componentDidMount() {
-    ScrollReveal({ reset: true, container: '.body-row'}).reveal('.reveal', 50);
-
     typingAnimation($(".txt"), tl);
     questionAnimation($(".question"), tl);
     tl.to($("#command-form"), 0.5, {opacity: 1});
