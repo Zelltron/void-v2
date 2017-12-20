@@ -96,14 +96,13 @@ $.extend(
           case 'hidden:scroll':
               r1 = intersect(r1, el.getBoundingClientRect());
           break;
-          case 'body':
+          default:
               r1 = intersect(r1, scrollrect(el.getBoundingClientRect()));
-          break;
           }
           if ( r1.width <= 0 || r1.height <= 0 ) {
               return false;
           }
-      } while ((el = el.parentNode) && el.parentNode && ($el[0] = el));
+      } while ((el === el.parentNode) && el.parentNode && ($el[0] === el));
       return true;
     }
   }
@@ -113,10 +112,8 @@ $.extend(
 export default class App extends Component {
 
   componentDidMount() {
-    /// this is the elements we are working out the screen visibility of
     let target = $('.target');
 
-    /// simple update to show result of .filer(':onscreen')
     let update = function(){
         let str = '';
         target.filter(':onscreen').each(function(){
