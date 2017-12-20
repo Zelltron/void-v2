@@ -7,7 +7,8 @@ import {TimelineMax, Power1} from 'gsap';
 import SplitText from './gsap/SplitText.min.js';
 import ScrollReveal from 'scrollreveal';
 
-import CommandForm from './commandForm';
+import CommandForm from './components/commandForm';
+import TV from './components/tv';
 
 function typingAnimation(text, timeline) {
   text.each(function() {
@@ -82,25 +83,12 @@ export default class App extends Component {
               </div>
               <CommandForm {...this.props} timeline={tl}/>
               <div id="central-body" className="body-row">
-                <div id="tv-con-1" className="tv-container reveal">
-                  <img alt="tv-1" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
-                </div>
-                <div id="tv-con-2" className="tv-container reveal">
-                  <img alt="tv-2" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
-                  <img alt="dog" id="dog" className="mainscreen tv-contents" src={process.env.PUBLIC_URL + "/dog.gif"}/>
-                </div>
-                <div id="tv-con-3" className="tv-container reveal">
-                  <img alt="tv-3" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
-                </div>
-                <div id="tv-con-4" className="tv-container reveal">
-                  <img alt="tv-4" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
-                </div>
-                <div id="tv-con-5" className="tv-container reveal">
-                  <img alt="tv-5" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
-                </div>
-                <div id="tv-con-6" className="tv-container reveal">
-                  <img alt="tv-6" className="mainscreen tv" src={process.env.PUBLIC_URL + "/tv.png"}/>
-                </div>
+                <TV key="1" imgSrc={process.env.PUBLIC_URL + "/dog.gif"} />
+                <TV key="2" imgSrc={process.env.PUBLIC_URL + "/dog.gif"} />
+                <TV key="3" imgSrc={process.env.PUBLIC_URL + "/dog.gif"} />
+                <TV key="4" imgSrc={process.env.PUBLIC_URL + "/dog.gif"} />
+                <TV key="5" imgSrc={process.env.PUBLIC_URL + "/dog.gif"} />
+                <TV key="6" imgSrc={process.env.PUBLIC_URL + "/dog.gif"} />
                 <div id="contact-row" className="reveal">
                   <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/ryanzell"><img alt="linkedin" className="mainscreen linked" src={process.env.PUBLIC_URL + "/linked.png"}/></a>
                   <a rel="noopener noreferrer" target="_blank" href="https://www.github.com/zelltron"><img alt="github" className="mainscreen octo" src={process.env.PUBLIC_URL + "/octo.svg"}/></a>
