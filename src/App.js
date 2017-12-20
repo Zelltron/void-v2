@@ -7,7 +7,8 @@ import {TimelineMax, Power1} from 'gsap';
 import SplitText from './gsap/SplitText.min.js';
 
 import CommandForm from './components/commandForm';
-import TV from './components/tv';
+import StandardTVs from './components/standardTVs';
+import BlackHole from './components/space';
 
 function typingAnimation(text, timeline) {
   text.each(function() {
@@ -63,29 +64,10 @@ export default class App extends Component {
                 <h3 id="void-name">{"Very Odd Independent Design"}</h3>
               </div>
               <img alt="portal" id="loading"/>
-              <div className="space"></div>
-              <div className="space-container">
-                <div className="space-wrapper">
-                  <div className="blackhole">
-                    <div className="debris"></div>
-                    <div className="debris"></div>
-                    <div className="debris"></div>
-                    <div className="debris"></div>
-                    <div className="debris"></div>
-                    <div className="debris"></div>
-                    <div className="debris"></div>
-                    <div className="debris"></div>
-                  </div>
-                </div>
-              </div>
+              <BlackHole/>
               <CommandForm {...this.props} timeline={tl}/>
               <div id="central-body" className="body-row">
-                <TV key="1" imgSrc={process.env.PUBLIC_URL + "/dog.gif"} />
-                <TV key="2" imgSrc={process.env.PUBLIC_URL + "/dog.gif"} />
-                <TV key="3" imgSrc={process.env.PUBLIC_URL + "/dog.gif"} />
-                <TV key="4" imgSrc={process.env.PUBLIC_URL + "/dog.gif"} />
-                <TV key="5" imgSrc={process.env.PUBLIC_URL + "/dog.gif"} />
-                <TV key="6" imgSrc={process.env.PUBLIC_URL + "/dog.gif"} />
+                <StandardTVs/>
                 <div id="contact-row" className="reveal">
                   <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/ryanzell"><img alt="linkedin" className="mainscreen linked" src={process.env.PUBLIC_URL + "/linked.png"}/></a>
                   <a rel="noopener noreferrer" target="_blank" href="https://www.github.com/zelltron"><img alt="github" className="mainscreen octo" src={process.env.PUBLIC_URL + "/octo.svg"}/></a>

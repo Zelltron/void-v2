@@ -536,6 +536,7 @@ $scan-opacity: 0.75; /* MIXINS */
 
 .tv-container {
   position: relative;
+  pointer-events: none;
 }
 
 .tv {
@@ -544,6 +545,8 @@ $scan-opacity: 0.75; /* MIXINS */
 
 .tv-contents {
   height: 99px;
+  min-width: 140px;
+  width: 140px;
   position: absolute;
   left: 25px;
   top: 25px;

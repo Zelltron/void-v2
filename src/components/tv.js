@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import reveal from '../scrollReveal/reveal';
+// import reveal from '../scrollReveal/reveal';
 
-class TV extends Component {
+export default class TV extends Component {
   render(){
     return (
       <div className="tv-container reveal">
@@ -12,4 +12,4 @@ class TV extends Component {
   }
 };
 
-export default reveal(TV);
+// export default reveal(TV);
