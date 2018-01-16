@@ -10,7 +10,7 @@ export default class ErrorModal extends Component {
 
   closeModal(event){
     event.preventDefault();
-    $('.error-modal').css('display', 'none');
+    $('.warning-container').css('display', 'none');
     $('#command-input').css('pointer-events', 'all');
   }
 
@@ -18,9 +18,26 @@ export default class ErrorModal extends Component {
 
     return (
       <div className="error-page">
-        <div className="error-modal">
-          <p>{this.props.errorMessage}</p>
-          <button className="btn btn-default close-button" onClick={this.closeModal}>Close</button>
+        <div className="warning-container">
+          <div className="warning">
+            <div className="warning-bar">
+              <div className="warning-title">Warning</div>
+              <div className="warning-exit">
+                <div className="button-exit">&#10060;</div>
+              </div>
+            </div>
+            <div className="warning-content">
+              <div className="warning-icon">&#10060;</div>
+              <div className="warning-message">
+                  <p>{this.props.errorMessage}</p>
+              </div>
+              <div className="warning-button">
+                <span onClick={this.closeModal} className="warning-btn-box">
+                  <span className="warning-btn-text">OK</span>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
