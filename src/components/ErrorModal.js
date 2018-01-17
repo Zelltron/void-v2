@@ -33,10 +33,12 @@ export default class ErrorModal extends Component {
                     <p>{this.props.errorMessage}</p>
                 </div>
               </div>
-              <div className="warning-button">
-                <span onClick={this.closeModal} className="warning-btn-box">
-                  <span className="warning-btn-text">OK</span>
-                </span>
+              <div className="warning-bottom">
+                <div className="warning-button">
+                  <span onClick={this.closeModal} className="warning-btn-box">
+                    <span className="warning-btn-text">OK</span>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
