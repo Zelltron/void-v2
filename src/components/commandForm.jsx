@@ -61,7 +61,7 @@ export default class CommandForm extends Component {
 
   validate(displayModal, event) {
     if(displayModal === true){
-      this.setState({errorMessage: 'PLEASE SUBMIT AN ANSWER.'});
+      this.setState({errorMessage: 'Please submit an answer.'});
       $('.warning-container').css('display', 'block');
       $('#command-input').css('pointer-events', 'none');
     }else{

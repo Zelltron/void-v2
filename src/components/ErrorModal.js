@@ -22,14 +22,16 @@ export default class ErrorModal extends Component {
           <div className="warning">
             <div className="warning-bar">
               <div className="warning-title">Warning</div>
-              <div className="warning-exit">
+              <div onClick={this.closeModal} className="warning-exit">
                 <i className="far fa-times button-exit"></i>
               </div>
             </div>
             <div className="warning-content">
-              <div className="warning-icon">&#10060;</div>
-              <div className="warning-message">
-                  <p>{this.props.errorMessage}</p>
+              <div className="warning-top">
+                <div className="warning-icon"><i className="far fa-times error-x"></i></div>
+                <div className="warning-message">
+                    <p>{this.props.errorMessage}</p>
+                </div>
               </div>
               <div className="warning-button">
                 <span onClick={this.closeModal} className="warning-btn-box">
