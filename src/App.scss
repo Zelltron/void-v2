@@ -635,16 +635,7 @@ $scan-opacity: 0.75; /* MIXINS */
 	font-weight: 600;
 }
 
-.warning-exit	{
-	// height: 100%;
-	display: block;
-	float: right;
-	padding-top: 3px;
-	padding-bottom: 3px;
-}
-
 .warning-exit {
-	padding-left:  5px;
 	padding-right: 5px;
 }
 
@@ -652,13 +643,13 @@ $scan-opacity: 0.75; /* MIXINS */
 	background: #BFBFBF;
 	font-weight: 600;
 	color: #6F6F6F;
-	height: 15px;
+	// height: 15px;
 	width: 19px;
 	border-right: 2px solid black;
 	border-bottom: 2px solid black;
 	border-left: 1px solid white;
 	border-top: 1px solid white;
-	font-size: 55%;
+	// font-size: 55%;
 	margin: auto;
 	text-align: center;
   display: flex;
