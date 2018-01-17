@@ -621,6 +621,9 @@ $scan-opacity: 0.75; /* MIXINS */
 	width: 100%;
 	background: #01007A;
 	height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .warning-title {

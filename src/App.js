@@ -1,4 +1,5 @@
 import './App.css';
+import './fontawesome-all.min.css';
 
 import React, {Component} from 'react';
 import $ from 'jquery';

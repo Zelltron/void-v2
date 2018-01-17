@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import FontAwesome from 'react-fontawesome';
 import $ from 'jquery';
 
 export default class ErrorModal extends Component {
@@ -23,7 +24,12 @@ export default class ErrorModal extends Component {
             <div className="warning-bar">
               <div className="warning-title">Warning</div>
               <div className="warning-exit">
-                <div className="button-exit">&#10060;</div>
+                {/* <div className="button-exit">&#10060;</div> */}
+                <i className="far fa-times button-exit"></i>
+                {/* <FontAwesome
+                  className='button-exit'
+                  name='times'
+                /> */}
               </div>
             </div>
             <div className="warning-content">
