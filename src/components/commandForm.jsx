@@ -62,7 +62,7 @@ export default class CommandForm extends Component {
   validate(displayModal, event) {
     if(displayModal === true){
       this.setState({errorMessage: 'Please submit an answer.'});
-      $('.warning-container').css('display', 'block');
+      $('.warning-container, .warning').css('display', 'block');
       $('#command-input').css('pointer-events', 'none');
     }else{
       this.handleSubmit(event);
@@ -74,7 +74,9 @@ export default class CommandForm extends Component {
 
     return (
       <div>
-        <ErrorModal errorMessage={this.state.errorMessage} />
+        <div className="error-page">
+          <ErrorModal errorMessage={this.state.errorMessage} />
+        </div>
         <form id="command-form" onSubmit={this.handleSubmit}>
           <p style={styles.pStyle}>{">"}</p>
           <input autoFocus="true" autoComplete="off" id="command-input" type="text" value={this.state.value} onChange={this.handleChangeYes} maxLength="3"/>

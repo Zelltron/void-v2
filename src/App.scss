@@ -609,17 +609,20 @@ $scan-opacity: 0.75; /* MIXINS */
 	max-width: 500px;
 	min-height: 20px;
 	margin: auto;
+  pointer-events: none;
 }
 
 .warning {
 	background: #BFBFBF;
-	display: block;
+	display: none;
 	min-height: 50px;
-	width: 100%;
+  z-index: 10000;
+	// width: 100%;
 	-webkit-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.75);
 	-moz-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.75);
 	box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.75);
 	border: 1.4px solid white;
+  pointer-events: none;
 }
 
 .warning-bar {
@@ -629,6 +632,7 @@ $scan-opacity: 0.75; /* MIXINS */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  pointer-events: all;
 }
 
 .warning-title {
@@ -646,6 +650,7 @@ $scan-opacity: 0.75; /* MIXINS */
   padding-right: 3px;
   height: 16px;
   z-index: 2000;
+  pointer-events: all;
 }
 
 .button-exit  {
@@ -726,6 +731,7 @@ $scan-opacity: 0.75; /* MIXINS */
 }
 
 .warning-button {
+  pointer-events: all;
 	margin: auto;
 	display: block;
 	text-align: center;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import Draggable from 'react-draggable';
 
 export default class ErrorModal extends Component {
   constructor(props) {
@@ -10,15 +11,14 @@ export default class ErrorModal extends Component {
 
   closeModal(event){
     event.preventDefault();
-    $('.warning-container').css('display', 'none');
+    $('.warning-container, .warning').css('display', 'none');
     $('#command-input').css('pointer-events', 'all');
   }
 
   render() {
 
     return (
-      <div className="error-page">
-        <div className="warning-container">
+        <Draggable className="warning-container">
           <div className="warning">
             <div className="warning-bar">
               <div className="warning-title">Warning</div>
@@ -42,8 +42,7 @@ export default class ErrorModal extends Component {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </Draggable>
     );
   }
 }
