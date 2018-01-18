@@ -11,14 +11,14 @@ export default class ErrorModal extends Component {
 
   closeModal(event){
     event.preventDefault();
-    $('.warning-container, .warning').css('display', 'none');
+    $('.warning').css('display', 'none');
     $('#command-input').css('pointer-events', 'all');
   }
 
   render() {
 
     return (
-        <Draggable className="warning-container">
+        <Draggable>
           <div className="warning">
             <div className="warning-bar">
               <div className="warning-title">Warning</div>

@@ -604,17 +604,10 @@ $scan-opacity: 0.75; /* MIXINS */
   pointer-events: all;
 }
 
-.warning-container {
-	display: none;
-	max-width: 500px;
-	min-height: 20px;
-	margin: auto;
-  pointer-events: none;
-}
-
 .warning {
 	background: #BFBFBF;
 	display: none;
+  max-width: 350px;
 	min-height: 50px;
   z-index: 10000;
 	// width: 100%;
